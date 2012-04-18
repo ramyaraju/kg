@@ -1,19 +1,4 @@
-#include <windows.h>
-#include <stdlib.h>
-#include <tchar.h>
-#include <Commctrl.h>
-#include "resource.h"	// resources
-#include "libs/music.h"	// mod to play
-#include "libs/ufmod.h" // lib to play the mod
-#include "keygens.h"	// keygen classes
-
-#pragma comment(lib, "ufmod.lib")
-#pragma comment(lib, "winmm.lib")
-
-INT_PTR CALLBACK	WndProc(HWND, UINT, WPARAM, LPARAM);
-
-HINSTANCE hInst;
-PCKeygener kg;
+#include "kg_gui.h";
 
 int APIENTRY _tWinMain(HINSTANCE hInstance,
                      HINSTANCE hPrevInstance,
