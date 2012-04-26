@@ -41,6 +41,7 @@ class SHA1
          *  Returns the message digest
          */
         bool Result(unsigned *message_digest_array);
+		bool Result(unsigned char *message_digest_array);
 
         /*
          *  Provide input to SHA1

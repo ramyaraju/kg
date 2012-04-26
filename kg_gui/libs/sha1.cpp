@@ -153,6 +153,29 @@ bool SHA1::Result(unsigned *message_digest_array)
     return true;
 }
 
+bool SHA1::Result(unsigned char *message_digest_array)
+{
+	unsigned sha_digest[5];
+	unsigned t;
+	int i,j;
+	
+	if ( !Result(sha_digest) )
+	{
+		return false;
+	}
+
+	for(i = 0; i < 5; i++)
+	{
+		t = *(unsigned *)&sha_digest[i];
+		for(j = 4; j > 0; j--)
+		{
+			message_digest_array[4*i+j-1] = t & 0xFF;
+			t >>= 8;
+		}
+	}
+	return true;
+}
+
 /*  
  *  Input
  *

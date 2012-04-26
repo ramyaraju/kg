@@ -218,16 +218,36 @@
 			Name="keymakerks"
 			>
 			<Filter
-				Name="happy_kgme8"
+				Name="HappyTown"
 				>
-				<File
-					RelativePath=".\kg\happy_kgme_8.cpp"
+				<Filter
+					Name="HappyTown_26"
 					>
-				</File>
-				<File
-					RelativePath=".\kg\happy_kgme_8.h"
+					<File
+						RelativePath=".\kg\happytown26.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\kg\happytown26.h"
+						>
+					</File>
+				</Filter>
+			</Filter>
+			<Filter
+				Name="Happy"
+				>
+				<Filter
+					Name="happy_kgme8"
 					>
-				</File>
+					<File
+						RelativePath=".\kg\happy_kgme_8.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\kg\happy_kgme_8.h"
+						>
+					</File>
+				</Filter>
 			</Filter>
 		</Filter>
 		<Filter
@@ -254,6 +274,30 @@
 				</File>
 				<File
 					RelativePath=".\libs\ECPoint.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="SHA-1"
+				>
+				<File
+					RelativePath=".\libs\sha1.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\libs\sha1.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="ECDSA"
+				>
+				<File
+					RelativePath=".\libs\ECDSA.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\libs\ECDSA.h"
 					>
 				</File>
 			</Filter>

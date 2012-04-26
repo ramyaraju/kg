@@ -1,4 +1,19 @@
-#include "kg_gui.h";
+#include <windows.h>
+#include <stdlib.h>
+#include <tchar.h>
+#include <Commctrl.h>
+#include "resource.h"	// resources
+#include "libs/music.h"	// mod to play
+#include "libs/ufmod.h" // lib to play the mod
+#include "keygens.h"	// keygen classes
+
+#pragma comment(lib, "ufmod.lib")
+#pragma comment(lib, "winmm.lib")
+
+INT_PTR CALLBACK	WndProc(HWND, UINT, WPARAM, LPARAM);
+
+HINSTANCE hInst;
+PCKeygener kg;
 
 int APIENTRY _tWinMain(HINSTANCE hInstance,
                      HINSTANCE hPrevInstance,
@@ -6,7 +21,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
                      int       nCmdShow)
 {
 	// initialise once, for randomisation purposes
-	kg = new happy_kgme_8;
+	kg = new happytown26;
 	if (kg == NULL)
 	{
 		MessageBox(NULL, "Memory allocation error! :(", "Error!", MB_ICONERROR);
@@ -26,10 +41,13 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 char * GenerateSerial(char *name)
 {
 	string ser;
-	if ((kg->GenerateSerial(name, ser)) == false)
+	bool is_ok = false;
+	int tt = GetTickCount();
+	do 
 	{
-		return NULL;
-	}
+		tt = GetTickCount() - tt;
+		is_ok = kg->GenerateSerial(name, ser);
+	} while (is_ok == false || tt < 0x10000 );
 	int len = ser.length();
 	char *serial = new char[len+1];
 	strcpy_s(serial, len+1, ser.c_str());
